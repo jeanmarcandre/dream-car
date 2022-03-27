@@ -1,0 +1,21 @@
+<nav class="multi-repeating-linear navbar navbar-expand-lg navbar-light bg-warning">
+  <div class="container">
+    <!-- <a href="#" class="pull-left"><img src="/path/to/image.png"></a>  -->
+    <button class="btn btn-secondary"><a class="navbar-brand" href="#">{{ getTitle() }}</a></button>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <button class="btn btn-secondary"><a class="nav-link" aria-current="page" [routerLink]="['/home']">Garage</a></button>
+        </li>
+        <li class="nav-item">
+          <button class="btn 
+          btn-secondary"><a class="nav-link" [routerLink]="['/admin', 'dashboard']">Dashboard</a></button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

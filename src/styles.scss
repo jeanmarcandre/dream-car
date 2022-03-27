@@ -1,1 +1,41 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.min.css";
+
+/* Vos propres couleurs */
+$primary: rgb(192, 38, 38);
+$danger: rgb(61, 5, 192);
+$success: rgb(29, 202, 86);
+$warning: rgb(251, 5, 5);
+$info: rgb(24, 28, 224);
+
+$body-bg: rgb(241, 231, 240);
+
+@import "bootstrap";
+
+body {
+    width: 100%;
+    // height: 100%;
+    background-image: url(../src/assets/img/countach-50-avg.jpg);
+    background-size: cover;
+}
+
+.color {
+    color: lightgrey;
+}
+
+.video {
+    margin: auto;
+    margin-top : 10% ;
+    margin-bottom : 10%;
+    text-align : center;
+    width : 100% ;
+    height : 100% ;
+}
+
+.titre {
+    border-radius: 25px;
+    text-shadow: 1px 1px 2px red, 0 0 2em rgb(255, 0, 200), 0 0 2em rgb(203, 221, 104);
+    color:rgb(88, 25, 170);
+ }
+
+

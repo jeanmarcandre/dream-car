@@ -1,0 +1,116 @@
+<div class="container p-2">
+    <div class="col-12 col-md-12 mx-auto">
+        <div class="color-black rounded p-3">
+            <div class="titre">
+                <h1 class="bg-secondary col-md-7">
+                    <p>Une nouvelle voiture dans le garage</p>
+                </h1>
+            </div>
+
+            <div class="col-12 col-md-8">
+                <!-- Image -->
+            </div>
+
+            <div class="col-12 col-md-4">
+                <iframe class="video" width="1280" height="720" src="https://www.youtube.com/embed/IuhP9DZHygQ"
+                title="YouTube video player" frameborder="1" allow="accelerometer; autoplay;
+                clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <div class="col-8">
+                    <!-- affichage de l'image -->
+                    <div *ngIf="currentVehPictureUrl">
+                        <img [src]="currentVehPictureUrl" alt="photo" class="w-100 rounded">
+
+                    </div>
+                </div>
+
+                <form
+                class="color img mt-5"
+                [formGroup]="vehicleForm" (ngSubmit)="onSubmitForm()"
+                >
+                    <div class="form-group mb-2">
+                        <input type="text" formControlName="id" hidden>
+
+                        <!-- Vendeur -->
+                        <label for="sellerInput" class="text-white mb-4">
+                            Vendeur
+                        </label>
+                        <!-- Photo du vehicule -->
+                        <input type="text" id="sellerInput" class="form-control" formControlName="seller">
+                        <div class="mb-3">
+                            <label for="sellPictureInput" class="form-label">Ajouter une photo</label>
+                            <input type="file" id="sellPictureInput" class="form-control" formControlName="picture"
+                            (change)="onChangePicture($event)">
+                        </div>
+                        <!-- Marque du véhicule -->
+                        <label for="brandInput" class="text-white mb-4">
+                            Marque
+                        </label>
+
+                        <input type="text" id="brandInput" class="form-control" formControlName="brand">
+
+                        <!-- Modèle du véhicule -->
+                        <label for="modelInput" class="text-white mb-4">
+                            Modèle
+                        </label>
+                        <input type="text" id="modelInput" class="form-control" formControlName="model">
+
+                        <!-- Description du vehicule -->
+                        <label for="descriptionInput" class="text-white mb-4">
+                            Description
+                        </label>
+                        <textarea type="text" id="descriptionInput" class="form-control w-100" rows="6"  formControlName="description">
+                        </textarea>
+
+                        <!-- Prix du véhicule -->
+                        <label for="priceInput" class="text-white mb-4">
+                            Prix
+                        </label>
+                        <input type="number" id="priceInput" class="form-control" formControlName="price">
+                    </div>
+
+                    <div class="d-flex mt-3">
+                        <button type="submit" class="btn btn-secondary w-100"
+                        [disabled]="vehicleForm.invalid">On the road</button>
+                    </div>
+                </form>
+
+            </div>
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 col-lg-8 mx-auto">
+            <h2>Mes annonces</h2>
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th>Photo</th>
+                <th scope="col">Vendeur</th>
+                <th scope="col">Voiture</th>
+                <th scope="col">Prix</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let carToSell of toSells; let i = index">
+                <th scope="row">{{ i }}</th>
+                <th>
+                    <img *ngIf="carToSell.picture" [src]="carToSell.picture" alt="photo veh" width="100">
+                </th>
+                <td>{{ carToSell.seller }}</td>
+                <td>{{ carToSell.brand + ' ' + carToSell.model}}</td>
+                <td>{{ carToSell.price | currency: 'EUR' : 'symbol' : '3.2-2' }}</td>
+                <td>
+                    <button
+                    class="btn btn-secondary"
+                    (click)="onEditVehicle(carToSell)"
+                    >Modifier</button>
+                    <button class="btn btn-primary"
+                    (click)="onDeleteVehicle(carToSell.id)">Supprimer</button>
+                </td>
+              </tr>
+            </tbody>
+        </table>
+        </div>
+    </div>
+</div>

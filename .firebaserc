@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "dream-car-996c2": {
+      "hosting": {
+        "dream-car": [
+          "dream-car-996c2"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "dream-car-996c2"
+  }
+}

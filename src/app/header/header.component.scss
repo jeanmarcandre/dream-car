@@ -1,0 +1,32 @@
+nav div li a {
+    text-shadow: 1px 1px 2px red, 0 0 2em rgb(255, 0, 200), 0 0 2em rgb(255, 0, 221);
+    color: rgb(88, 25, 170);
+}
+
+nav div a {
+    font-size: x-large;
+    text-shadow: 1px 1px 2px red, 0 0 2em rgb(255, 0, 200), 0 0 2em rgb(203, 221, 104);
+    color:rgb(88, 25, 170);
+}
+
+.multi-repeating-linear {
+  background:
+      repeating-linear-gradient(190deg, rgba(255, 0, 170, 0.5) 20px,
+        rgba(255, 153, 0, 0.5) 80px, rgba(0, 255, 55, 0.5) 120px,
+        rgba(0, 255, 0, 0.5) 160px, rgba(0, 0, 255, 0.5) 200px,
+        rgba(75, 0, 130, 0.5) 240px, rgba(238, 130, 238, 0.5) 280px,
+        rgba(255, 0, 0, 0.5) 300px),
+      repeating-linear-gradient(-190deg, rgba(255, 0, 212, 0.5) 10px,
+        rgba(255, 153, 0, 0.5) 60px, rgba(0, 255, 42, 0.5) 90px,
+        rgba(0, 255, 0, 0.5) 120px, rgba(0, 0, 255, 0.5) 150px,
+        rgba(75, 0, 130, 0.5) 180px, rgba(238, 130, 238, 0.5) 210px,
+        rgba(255, 0, 0, 0.5) 230px),
+      repeating-linear-gradient(23deg, red 50px, orange 100px,
+        yellow 150px, green 200px, blue 250px,
+        indigo 300px, violet 350px, red 370px);
+}
+
+  div {
+    width: 1000px;
+    height: 100px;
+  }
